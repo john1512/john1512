@@ -58,5 +58,6 @@ gem 'rmagick',                  '~> 2.12.0', rmagick_options
 # USER DEFINED
 
 gem "refinerycms-news", '~> 0.9.9'
+gem 'refinerycms-blog', '= 1.0.rc9'
 
 # END USER DEFINED
