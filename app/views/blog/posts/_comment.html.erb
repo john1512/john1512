@@ -1,11 +1,9 @@
-<article class='blog_comment_message' id='<%= "comment-#{comment.to_param}" %>'>
+<div class='blog_comment_message' id='<%= "comment-#{comment.to_param}" %>'>
   <p>
-    <%= auto_link(comment.message.to_s) %>
+    <%= comment.message.to_s.gsub("\r\n\r\n", "</p><p>").gsub("\r\n", "<br/>") %>
   </p>
-  <footer class='blog_comment_author'>
-    <p>
-      <%=  "Comment created at: #{comment.created_at}" %>
-    </p>
-  </footer>
-</article>
-
+</div>
+<p class='blog_comment_author'>
+  <%= t('.by', :who => comment.name) %>
+  <%= t('.time_ago', :time => time_ago_in_words(comment.created_at)) %>
+</p>
