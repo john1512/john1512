@@ -5,53 +5,21 @@
   <h1>News</h1>
   
   <div id="newsWrapper">
-    <div class="newsStory">
-      <h2>Headline 1</h2>
-      <div class="blueText">January 13, 2011</div>
-      <div>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas, justo tortor varius felis, tristique aliquet nisl sem ac ipsum. Proin...
-	<a href="#" class="readMore">Read More</a>
+    <% @news_items.each do |item| -%>
+      <div class="newsStory">
+        <h2><%= link_to item.title, news_item_url(item) %></h2>
+        <div class="blueText"><%= l(item.publish_date) %></div>
+        <div>
+          <%= truncate  item.body, :length => 250,
+              :omission => " ... #{link_to 'Read More', news_item_url(item), :class => 'readMore'}",
+              :preserve_html_tags => true %>
+        </div>
       </div>
-    </div>
-    
-    <div class="newsStory">
-      <h2>Second Headline</h2>
-      <div class="blueText">January 10, 2011</div>
-      <div class="newsTeaser">
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas, justo tortor varius felis, tristique aliquet nisl sem ac ipsum. Proin...
-	<a href="#" class="readMore">Read More</a>
-      </div>
-    </div>
-    
-    <div class="newsStory">
-      <h2>Second Headline</h2>
-      <div class="blueText">January 10, 2011</div>
-      <div class="newsTeaser">
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas, justo tortor varius felis, tristique aliquet nisl sem ac ipsum. Proin...
-	<a href="#" class="readMore">Read More</a>
-      </div>
-    </div>
-    
-    <div class="newsStory">
-      <h2>Second Headline</h2>
-      <div class="blueText">January 10, 2011</div>
-      <div class="newsTeaser">
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas, justo tortor varius felis, tristique aliquet nisl sem ac ipsum. Proin...
-	<a href="#" class="readMore">Read More</a>
-      </div>
-    </div>
-    
-    <div class="newsStory">
-      <h2>Second Headline</h2>
-      <div class="blueText">January 10, 2011</div>
-      <div class="newsTeaser">
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas, justo tortor varius felis, tristique aliquet nisl sem ac ipsum. Proin...
-	<a href="#" class="readMore">Read More</a>
-      </div>
-    </div>
+      
+    <% end -%>
   </div>
   
-  <a class="moreNews" href="#"><img src="images/more_news_button.jpg" alt="More News" /></a>
+  <a class="moreNews" href="/news"><img src="images/more_news_button.jpg" alt="More News" /></a>
 </div>
 
 <div id="differenceBox" class="floatRight">
