@@ -12,7 +12,7 @@
         <div>
           <%= truncate  item.body, :length => 250,
               :omission => " ... #{link_to 'Read More', news_item_url(item), :class => 'readMore'}",
-              :preserve_html_tags => true %>
+              :preserve_html_tags => false %>
         </div>
       </div>
       
