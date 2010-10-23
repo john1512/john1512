@@ -87,6 +87,9 @@ GEM
       rails (~> 3.0.0)
       truncate_html (= 0.4)
       will_paginate (~> 3.0.pre)
+    refinerycms-blog (1.0.rc9)
+      filters_spam (~> 0.2)
+      refinerycms (>= 0.9.7.13)
     refinerycms-i18n (0.9.8.8)
       refinerycms (>= 0.9.8)
       routing-filter (~> 0.1.6)
@@ -113,6 +116,7 @@ DEPENDENCIES
   aws-s3
   rails (= 3.0.1)
   refinerycms (~> 0.9.8.5)
+  refinerycms-blog (= 1.0.rc9)
   refinerycms-i18n (~> 0.9.8.7)
   refinerycms-inquiries (~> 0.9.8.8)
   refinerycms-news (~> 0.9.9)
