@@ -1,0 +1,11 @@
+<article class='blog_comment_message' id='<%= "comment-#{comment.to_param}" %>'>
+  <p>
+    <%= auto_link(comment.message.to_s) %>
+  </p>
+  <footer class='blog_comment_author'>
+    <p>
+      <%=  "Comment created at: #{comment.created_at}" %>
+    </p>
+  </footer>
+</article>
+
