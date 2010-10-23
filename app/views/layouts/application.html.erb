@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
+  <%= render :partial => "/shared/head" %>
+  <body>
+    <%= site_bar -%>
+    <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
+    <div id="wrap">
+      <div id="header">
+        <%= render :partial => "/shared/header" %>
+      </div><!-- END HEADER -->
+      <div id="content">
+        <%= yield %>
+      </div><!-- END CONTENT -->
+      <div style="clear:both;"></div>
+    </div><!-- END WRAP -->
+    <div id="footerWrapper">
+      <div id="footer">
+        <%= render :partial => "/shared/footer" %>
+      </div><!-- END FOOTER -->
+    </div><!-- END FOOTER WRAPPER -->
+  </body>
+</html>
