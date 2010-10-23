@@ -92,6 +92,8 @@ GEM
       routing-filter (~> 0.1.6)
     refinerycms-inquiries (0.9.8.10)
       filters_spam (~> 0.2)
+    refinerycms-news (0.9.9.5)
+      refinerycms (~> 0.9.8)
     rmagick (2.12.2)
     routing-filter (0.1.7)
       actionpack
@@ -113,5 +115,6 @@ DEPENDENCIES
   refinerycms (~> 0.9.8.5)
   refinerycms-i18n (~> 0.9.8.7)
   refinerycms-inquiries (~> 0.9.8.8)
+  refinerycms-news (~> 0.9.9)
   rmagick (~> 2.12.0)
   sqlite3-ruby
