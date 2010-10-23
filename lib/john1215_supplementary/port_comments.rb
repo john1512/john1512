@@ -32,6 +32,27 @@ class Comment < BlogEntry
 		@author = xml.xpath('author')[0].content.to_s
 		@link_id = xml.xpath('thr:in-reply-to', { 'thr' => 'http://purl.org/syndication/thread/1.0' } )[0].attributes['href'].to_s
 	end
+	
+	def process_text()
+		process = @text
+		
+		replaces = {
+			'<br />'=>"\n",
+		}
+		replaces.keys.each do |replace_me|
+			replace = ''
+			replace = process.sub!( replace_me, replaces[replace_me] ) until replace.nil?
+		end
+		mtext = ''
+		lines = process.split("\n")
+		lines.each { |line| mtext += "<p>#{line}</p>" }
+		
+		@date =~ /(.+) \+\d+/
+		
+		mtext += "<br /><p><em>This comment was originally posted on the Blogger site on #{$1}</em></p>"
+		
+		mtext
+	end
 end
 
 #from posts, get channel.item.
@@ -57,6 +78,30 @@ class Post < BlogEntry
 		@link_id = xml.xpath('link')[0].content.to_s
 		
 		xml.xpath('category').each { |category| @categories << category.content.to_s }
+	end
+	
+	def process_text()
+		process = @text
+		
+		process =~ /(.+)<div class="blogger-post-footer">.+$/
+		process = $1
+		
+		replaces = {
+			'<br />'=>"\n",
+		}
+		replaces.keys.each do |replace_me|
+			replace = ''
+			replace = process.sub!( replace_me, replaces[replace_me] ) until replace.nil?
+		end
+		mtext = ''
+		lines = process.split("\n")
+		lines.each { |line| mtext += "<p>#{line}</p>" }
+		
+		@date =~ /(.+) \+\d+/
+		
+		mtext += "<br /><p><em>This story was originally posted on <a>#{@link_id}</a> on #{$1}</em></p>"
+		
+		mtext
 	end
 end
 
@@ -116,22 +161,18 @@ end
 #put output into file to make sure we got everything
 File.open( './port_test.txt', 'w+' ) do |testfile|
 posts.each do |post|
-	testfile.puts 'POST:'
-	testfile.puts "\tTITLE:#{post.title}"
-	testfile.puts "\tAUTHOR:#{post.author}"
-	testfile.puts "\tDATE:#{post.date}"
-	testfile.puts "\tid:#{post.link_id}"
-	testfile.puts "\ttext:#{post.text}"
-	testfile.puts "\tcategories:#{post.categories.join(',')}"
+	testfile.puts '!!!POST:'
+	testfile.puts "TITLE:#{post.title}"
+	testfile.puts "DATE:#{post.date}"
+	testfile.puts "CATEGORIES:#{post.categories.join(',')}"
+	testfile.puts "TEXT:\n#{ post.process_text}"
 	
-	testfile.puts "\t\#comments:#{post.comments.size}"
+	testfile.puts "\nCOMMENTS(#{post.comments.size}):"
 	post.comments.each do |comment|
-		testfile.puts "\tCOMMENT:"
-		testfile.puts "\t\tTITLE:#{comment.title}"
-		testfile.puts "\t\tAUTHOR:#{comment.author}"
-		testfile.puts "\t\tDATE:#{comment.date}"
-		testfile.puts "\t\tid:#{comment.link_id}"
-		testfile.puts "\t\ttext:#{comment.text}"
+		testfile.puts "\n\tCOMMENT:"
+		testfile.puts "\tTITLE:#{comment.title}"
+		testfile.puts "\tAUTHOR:#{comment.author}"
+		testfile.puts "\tTEXT:\n#{comment.process_text}"
 	end
 end
 end
