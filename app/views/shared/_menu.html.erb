@@ -10,6 +10,13 @@
     # Select top menu items unless 'roots' is passed in.
     collection ||= @menu_pages
     roots ||= collection.select { |m| m.parent_id == nil }
+
+    sub_roots = @menu_pages.reject do |p|
+      if p.nil? || @page.nil? then true
+      else 
+        p.parent_id != @page.id
+      end
+    end
     if roots.any?
       sibling_count = roots.size - 1
 -%>
@@ -22,20 +29,25 @@
                        :hide_children => true,
                        :sibling_count => sibling_count,
                        :collection => collection,
-                       :apply_css => true
+                       :apply_css => false
                      }
           -%>
 	 </ul>
-	<ul id="sub_navigation">
-	  <%= render :partial => '/shared/menu',
+   <% unless sub_roots.empty? %>
+   <ul id="sub_navigation">
+     <%= render :partial => '/shared/menu_branch',
+             :collection => sub_roots,
              :locals => {
-               :apply_css => true,
-               :roots => @menu_pages.reject{|p| p.parent_id != @page.root.id },
-               :collection => @menu_pages.reject{|p| !p.self_and_ancestors.map(&:id).include?(@page.root.id) },
-               :extra_suffix => 'submenu'
+                :apply_css => false,
+                :hide_children => true,
+#               :roots => @menu_pages.reject{|p| p.parent_id != @page.root.id },
+                :sibling_count => 1,
+                :collection => collection,
+#               :extra_suffix => 'submenu'
              } 
 	   -%>
-        </ul>
+   </ul>
+ <% end %>
       </nav>
   <%
     end

@@ -78,6 +78,13 @@ ul#navigation li { display: inline; list-style: none; float: left; margin-left: 
 ul#navigation li a { display: block; text-transform: uppercase; color: #4b606e; text-decoration: none; font-weight: bold; font-size: 16px;}
 ul#navigation li.selected { border-bottom: solid 3px #ab4731; }
 
+ul#sub_navigation  { position: absolute; right: 0; top: 152px; margin-bottom: 0;  }
+ul#sub_navigation li { display: inline; list-style: none; float: left; margin-left: 20px; padding-bottom: 5px; }
+ul#sub_navigation li a { display: block; text-transform: uppercase; color: #4b606e; text-decoration: none; font-weight: bold; font-size: 16px;}
+ul#sub_navigation li.selected { border-bottom: solid 3px #ab4731; }
+
+/* Hi Andy! */
+
 /* News Box */
 #newsBox { position: relative; height: 325px; width: 525px; background: url(../images/callout_corner.png) no-repeat; padding: 20px; }
 #newsBox h1 { margin-bottom: 10px; }
