@@ -37,7 +37,8 @@ class Comment < BlogEntry
 		process = @text
 		
 		replaces = {
-			'<br />'=>"\n",
+			'<br />' => "\n",
+			'&#39;' => "'"
 		}
 		replaces.keys.each do |replace_me|
 			replace = ''
@@ -49,7 +50,7 @@ class Comment < BlogEntry
 		
 		@date =~ /(.+) \+\d+/
 		
-		mtext += "<br /><p><em>This comment was originally posted on the Blogger site on #{$1}</em></p>"
+		mtext += "<p><em>This comment was originally posted on the Blogger site on #{$1}</em></p>"
 		
 		mtext
 	end
