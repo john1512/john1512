@@ -91,8 +91,8 @@ ul#navigation li.selected { border-bottom: solid 3px #ab4731; }
 
 ul#sub_navigation  { 
 	position: absolute; 
-	right: 100; 
-	top: 162px; 
+	right: 50; 
+	top: 182px; 
 	margin: 0;
 	padding: 0;
 	border: 0;
