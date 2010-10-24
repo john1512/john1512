@@ -69,6 +69,7 @@ h2,h2 a,h2 a:visited { font-size: 17px; color: #4b606e; margin-bottom: 5px; marg
 #homeBanner { margin: 0 0 20px 0; padding: 0; }
 .blueText { color: #158edb;  }
 .newsStory { margin-top: 10px; }
+.newsStory img { display: none; }
 .newsItem { margin-bottom: 35px; }
 
 ul#blog_posts > li { list-style:none; margin: 0; }
