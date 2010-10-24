@@ -1,0 +1,22 @@
+<% content_for :body_content_left do %>
+  <%= @page[:body] if @news_items.offset == 0 %>
+
+  <% if @news_items.any? %>
+    <% @news_items.each do |item| %>
+      <div class='newsItem'><h2><%= link_to item.title, news_item_url(item) %></h2>
+        <span class='blueText'><%= item.publish_date.strftime("%e %B, %Y %l:%M") %></span>
+      <%= truncate  item.body, :length => 500,
+                    :omission => " ... #{link_to 'Read More', news_item_url(item), :class => 'readMore'}",
+                    :preserve_html_tags => true %>
+      </div>
+    <% end %>
+
+    <%= will_paginate(@news_items) %>
+  <% else %>
+    <p><em><%= t('.no_items_yet') %></em></p>
+  <% end %>
+<% end -%>
+
+<% content_for :body_content_right, "&nbsp;" if @news_items.offset > 0 -%>
+
+<%= render :partial => "/shared/content_page" %>

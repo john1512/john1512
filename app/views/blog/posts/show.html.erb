@@ -1,7 +1,7 @@
 <% content_for :body_content_title, @blog_post.title %>
 
 <% content_for :body_content_left do %>
-  <p class='posted_at'>
+  <span class="blueText">
     <%= t('blog.shared.posts.created_at', :when => @blog_post.created_at.strftime('%d %B %Y')) %>.
     
     <% if (categories = @blog_post.categories).any? %>
@@ -12,7 +12,7 @@
         <% end %>
       </span>
     <% end %>
-  </p>
+  </span>
   <%= raw @blog_post.body %>
   
   <% if BlogPost.comments_allowed? %>
