@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="helps">
+    <% @helps.each do |help| %>
+      <li>
+        <%= link_to help, help_url(help) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

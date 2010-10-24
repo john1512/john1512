@@ -1,0 +1,19 @@
+<% form_for [:admin, @help] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+    :object => @help,
+    :include_object_name => true
+  } %>
+  
+  <div class='field'>
+    <%= f.label :content -%>
+    <%= f.text_area :content, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.helps.help.delete'),
+                :delete_confirmation => t('shared.admin.delete.message')
+              } %>
+<% end -%>

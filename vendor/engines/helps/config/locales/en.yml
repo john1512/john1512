@@ -1,0 +1,23 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    helps:
+      title: Helps
+  admin:
+    helps:
+      index:
+        create_new: Create a new Help
+        reorder: Reorder Helps
+        reorder_done: Done Reordering Helps
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Helps yet. Click "Create a new Help" to add your first help.
+      help:
+        view_live: View this help live <br/><em>(opens in a new window)</em>
+        edit: Edit this help
+        delete: Remove this help forever
+  helps:
+    show:
+      other: Other Helps

@@ -1,0 +1,19 @@
+nb:
+  plugins:
+    helps:
+      title: Helps
+  admin:
+    helps:
+      index:
+        create_new: Lag en ny Help
+        reorder: Endre rekkefølgen på Helps
+        reorder_done: Ferdig å endre rekkefølgen Helps
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Helps enda. Klikk på "Lag en ny Help" for å legge til din første help.
+      help:
+        view_live: Vis hvordan denne help ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne help
+        delete: Fjern denne help permanent
+  helps:
+    show:
+      other: Andre Helps
