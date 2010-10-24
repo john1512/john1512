@@ -15,7 +15,6 @@
       sibling_count = roots.size - 1
 -%>
 <!-- regarding apply_css: if you don't care about class='first' class='last' or class='selected' set apply_css to false for speed. -->
-      <nav id='<%= dom_id %>' class='<%= %W(#{css} clearfix).join(' ') %>'>
         <ul id="navigation">
           <%= render :partial => "/shared/menu_branch",
                      :collection => roots,
@@ -42,7 +41,6 @@
    </ul>
    </div>
  <% end %>
-      </nav>
   <%
     end
   end
