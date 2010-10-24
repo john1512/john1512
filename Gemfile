@@ -62,6 +62,7 @@ gem 'refinerycms-blog', '= 1.0.rc9'
 
 gem "rspec", ">= 2.0.0"
 gem "rspec-rails", ">= 2.0.0"
+gem "factory_girl_rails"
 
 
 # END USER DEFINED

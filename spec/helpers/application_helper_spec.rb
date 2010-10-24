@@ -1,19 +1,17 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the MenuHelper. For example:
-#
-# describe MenuHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe ApplicationHelper do
   describe "obtaining a sub page" do
-    it "goes boom" do
-      0.should == 27
+
+    before(:each) do
+      Factory(:page)
+      Factory(:page, :title=>"Another page")
+      Factory(:page, :title=>"Page3")
+      @all_pages = Page.all
+    end
+
+    it "returns an empty array if curr_page is null" do
+      helper.obtain_sub_pages(nil, @all_pages) 
     end
   end
 end
