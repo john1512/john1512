@@ -31,6 +31,11 @@ describe ApplicationHelper do
       helper.obtain_sub_pages(nil, @all_pages).should == [] 
     end
 
+    it "If the current page is a sub-page, then all siblings and itself will be returned" do
+      gallery = Page.find_by_title("Happy Ponies")
+      helper.obtain_sub_pages(gallery, @pages).size.should == 3
+    end    
+
     it "returns an empty array if the current page is an empty array" do
       helper.obtain_sub_pages([], @all_pages).should == [] 
     end
