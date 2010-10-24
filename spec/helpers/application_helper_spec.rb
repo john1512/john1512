@@ -10,6 +10,10 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe MenuHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe ApplicationHelper do
+  describe "obtaining a sub page" do
+    it "goes boom" do
+      0.should == 27
+    end
+  end
 end
