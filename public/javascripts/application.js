@@ -9,8 +9,13 @@ $(document).ready(function(){
 	qstrings: {
           tags: "john1512," + tag
 	},
-	itemTemplate: '<li><img alt="{{title}}" src="{{image_s}}" /></li>'
+	itemTemplate:
+	'<li>' +
+		'<a rel="colorbox" href="{{image}}" title="{{title}}">' +
+			'<img src="{{image_s}}" alt="{{title}}" />' +
+		'</a>' +
+	'</li>'
+  }, function(data) {
+	$('.jflickrfeed a').colorbox();
   });
 });
-
- 
