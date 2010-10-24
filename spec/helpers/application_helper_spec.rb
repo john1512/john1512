@@ -48,4 +48,14 @@ describe ApplicationHelper do
       helper.obtain_sub_pages(@pages.first, []).should == []
     end
   end
+
+  describe "flicker tag processing" do
+    before(:each) do
+      samples = { :monkey=> "<span class=\"monkey\">{{flicker:george}}</span>" }
+    end
+
+    it "correctly parse the monkey sample" do
+      flicker_tag_processing(samples[:monkey]).should == "nice"
+    end
+  end
 end
