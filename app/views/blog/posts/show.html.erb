@@ -13,7 +13,7 @@
       </span>
     <% end %>
   </p>
-  <%= @blog_post.body %>
+  <%= raw @blog_post.body %>
   
   <% if BlogPost.comments_allowed? %>
     <h2><%= t('.comments.title') %></h2>
