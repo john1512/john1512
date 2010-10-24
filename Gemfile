@@ -60,6 +60,10 @@ gem 'rmagick',                  '~> 2.12.0', rmagick_options
 gem "refinerycms-news", '~> 0.9.9'
 gem 'refinerycms-blog', '= 1.0.rc9'
 
+group :test do
+  gem 'rspec-rails', '>= 2.0.0'
+end
+
 # END USER DEFINED
 
 gem 'refinerycms-helps', '1.0', :path => 'vendor/engines', :require => 'helps'

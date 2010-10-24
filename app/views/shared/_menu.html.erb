@@ -13,9 +13,9 @@
 
     sub_roots = @menu_pages.reject do |p|
       if p.nil? || @page.nil?
-	true
+	      true
       elsif !@page.parent_id.nil?
-	p.parent_id != @page.parent_id
+	      p.parent_id != @page.parent_id
       else 
         p.parent_id != @page.id
       end
