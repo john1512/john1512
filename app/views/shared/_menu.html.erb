@@ -10,16 +10,7 @@
     # Select top menu items unless 'roots' is passed in.
     collection ||= @menu_pages
     roots ||= collection.select { |m| m.parent_id == nil }
-
-    sub_roots = @menu_pages.reject do |p|
-      if p.nil? || @page.nil?
-	true
-      elsif !@page.parent_id.nil?
-	p.parent_id != @page.parent_id
-      else 
-        p.parent_id != @page.id
-      end
-    end
+    sub_roots = obtain_sub_pages( @page, @menu_pages )
     if roots.any?
       sibling_count = roots.size - 1
 -%>
