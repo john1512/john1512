@@ -18,7 +18,7 @@ module ApplicationHelper
   def flicker_tag_processing( html )
     html.gsub(
       /<([A-Z][A-Z0-9]*)\b[^>]*>\s*{{FLI?C?KE?R:\s*([^}]+)}}\s*<\/\1>/i,
-      "<ul class='jflickrfeed' data-tag='\\1'></ul>"
+      "<ul class='jflickrfeed' data-tag='\\2'></ul>"
     )
   end
 	
