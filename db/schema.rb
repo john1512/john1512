@@ -10,12 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101024023204) do
+ActiveRecord::Schema.define(:version => 20101023153953) do
 
   create_table "blog_categories", :force => true do |t|
-    t.string    "title"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "blog_categories", ["id"], :name => "index_blog_categories_on_id"
@@ -26,36 +26,27 @@ ActiveRecord::Schema.define(:version => 20101024023204) do
   end
 
   create_table "blog_comments", :force => true do |t|
-    t.integer   "blog_post_id"
-    t.boolean   "spam"
-    t.string    "name"
-    t.string    "email"
-    t.text      "body"
-    t.string    "state"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.integer  "blog_post_id"
+    t.boolean  "spam"
+    t.string   "name"
+    t.string   "email"
+    t.text     "body"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "blog_comments", ["id"], :name => "index_blog_comments_on_id"
 
   create_table "blog_posts", :force => true do |t|
-    t.string    "title"
-    t.text      "body"
-    t.boolean   "draft"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-  end
-
-  add_index "blog_posts", ["id"], :name => "index_blog_posts_on_id"
-
-  create_table "helps", :force => true do |t|
-    t.text     "content"
-    t.integer  "position"
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "draft"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "helps", ["id"], :name => "index_helps_on_id"
+  add_index "blog_posts", ["id"], :name => "index_blog_posts_on_id"
 
   create_table "images", :force => true do |t|
     t.string    "image_mime_type"
