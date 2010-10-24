@@ -28,19 +28,19 @@
           -%>
 	 </ul>
    <% unless sub_roots.empty? %>
+   <div id="sub_nav_wrap">
    <ul id="sub_navigation">
      <%= render :partial => '/shared/menu_branch',
              :collection => sub_roots,
              :locals => {
                 :apply_css => true,
                 :hide_children => true,
-#               :roots => @menu_pages.reject{|p| p.parent_id != @page.root.id },
                 :sibling_count => 1,
                 :collection => collection,
-#               :extra_suffix => 'submenu'
              } 
 	   -%>
    </ul>
+   </div>
  <% end %>
       </nav>
   <%
