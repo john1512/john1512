@@ -17,9 +17,11 @@ module ApplicationHelper
 	#
 	#for _content_page.html.erb
 	#
-	
-	def flicker_tag_processing( section_html )
-		
+	def flicker_tag_processing( html )
+		html.gsub(
+			/<p>{{FLICKR:\s*([^}]*)}}<.p>/, 
+			"<ul class='jflickrfeed' data-tag='\\1'></ul>"
+		)
 	end
 	
 	

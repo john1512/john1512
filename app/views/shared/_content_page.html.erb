@@ -24,7 +24,7 @@
 
     unless section[:html].blank?
       unless section[:title]
-        section[:html] = section[:html].gsub(/<p>{{FLICKR:\s*([^}]*)}}<.p>/, "<ul class='jflickrfeed' data-tag='\\1'></ul>")
+        section[:html] = flicker_tag_processing( section[:html] )
       else
         section[:html] = "<h1 class='content' id='#{dom_id}'>#{section[:html]}</h1>"
       end
