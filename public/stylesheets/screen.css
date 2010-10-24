@@ -83,12 +83,24 @@ ul#navigation  {
 	outline: 0;
 	font-size: 100%;
 	vertical-align: baseline;
-	background: transparent;  }
+	background: transparent;  
+}
 ul#navigation li { display: inline; list-style: none; float: left; margin-left: 20px; padding-bottom: 5px; }
 ul#navigation li a { display: block; text-transform: uppercase; color: #4b606e; text-decoration: none; font-weight: bold; font-size: 16px;}
 ul#navigation li.selected { border-bottom: solid 3px #ab4731; }
 
-ul#sub_navigation  { position: absolute; right: 0; top: 152px; margin-bottom: 0;  }
+ul#sub_navigation  { 
+	position: absolute; 
+	right: 100; 
+	top: 162px; 
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;  
+}
 ul#sub_navigation li { display: inline; list-style: none; float: left; margin-left: 20px; padding-bottom: 5px; }
 ul#sub_navigation li a { display: block; text-transform: uppercase; color: #4b606e; text-decoration: none; font-weight: bold; font-size: 16px;}
 ul#sub_navigation li.selected { border-bottom: solid 3px #ab4731; }
