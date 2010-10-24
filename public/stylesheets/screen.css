@@ -71,6 +71,7 @@ h2,h2 a,h2 a:visited { font-size: 17px; color: #4b606e; margin-bottom: 5px; marg
 
 ul#blog_posts > li { list-style:none; margin: 0; }
 ul#blog_posts { margin: 0; padding: 0; }
+.blog_comment_message .even {background: #afc7db; }
 
 /* Main Navigation */ 
 ul#navigation  { 

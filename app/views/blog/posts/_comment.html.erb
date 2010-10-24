@@ -1,4 +1,4 @@
-<div class='blog_comment_message' id='<%= "comment-#{comment.to_param}" %>'>
+<div class="blog_comment_message <%= cycle('odd', 'even', :name => 'blog_comment_class') -%>" id='<%= "comment-#{comment.to_param}" %>'>
   <p>
     <%= simple_format(comment.message.to_s) %>
   </p>
