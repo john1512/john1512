@@ -54,7 +54,8 @@ describe ApplicationHelper do
       @samples = { 
                    :monkey => "<span class=\"monkey\">{{flicker:george}}</span>", 
                    :minimal => "<P>{{FLKR:g}}</P>",
-                   :verbose => "STUFF<BLah34>  {{FLICKER:  99@73f}}</Blah34>MORESTUFF"
+                   :verbose => "STUFF<BLah34>  {{FLICKER:  99@73f}}</Blah34>MORESTUFF",
+                   :nonsense => "I want to ride my bicyle"
                  }
     end
 
@@ -72,6 +73,14 @@ describe ApplicationHelper do
 
     it "can cope if html is nil" do
       flicker_tag_processing(nil).should == ""
+    end
+
+    it "can cope if html is ''" do
+      flicker_tag_processing('').should == ""
+    end
+
+    it "will not change nonense" do
+      flicker_tag_processing(@samples[:nonsense]).should == @samples[:nonsense]
     end
     
   end
