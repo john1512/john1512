@@ -10,6 +10,7 @@
   <%#= stylesheet_link_tag "theme" %>
   <%#= stylesheet_link_tag "home", :theme => theme if home_page? %>
   <%= stylesheet_link_tag "screen" %>
+  <%= stylesheet_link_tag "colorbox/colorbox" %>
   <%= "<!--[if IE 7]>#{stylesheet_link_tag 'ie7'}<![endif]-->".html_safe if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
   <%= "<meta name=\"keywords\" content=\"#{@meta.meta_keywords}\" />".html_safe if @meta.meta_keywords.present? %>
   <%= "<meta name=\"description\" content=\"#{@meta.meta_description}\" />".html_safe if @meta.meta_description.present? -%>
@@ -17,5 +18,6 @@
   <%#= yield :head %>
   <%= jquery_include_tags %>
   <%= javascript_include_tag "jflickrfeed" %>
+  <%= javascript_include_tag "jquery.colorbox-min.js" %>
   <%= javascript_include_tag "application" %>
 </head>

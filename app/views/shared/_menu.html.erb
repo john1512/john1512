@@ -32,7 +32,7 @@
                        :hide_children => true,
                        :sibling_count => sibling_count,
                        :collection => collection,
-                       :apply_css => false
+                       :apply_css => true
                      }
           -%>
 	 </ul>
@@ -41,7 +41,7 @@
      <%= render :partial => '/shared/menu_branch',
              :collection => sub_roots,
              :locals => {
-                :apply_css => false,
+                :apply_css => true,
                 :hide_children => true,
 #               :roots => @menu_pages.reject{|p| p.parent_id != @page.root.id },
                 :sibling_count => 1,
