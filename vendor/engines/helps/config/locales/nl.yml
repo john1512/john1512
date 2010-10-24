@@ -1,0 +1,19 @@
+nl:
+  plugins:
+    helps:
+      title: Helps
+  admin:
+    helps:
+      index:
+        create_new: Maak een nieuwe Help
+        reorder: Wijzig de volgorde van de Helps
+        reorder_done: Klaar met het wijzingen van de volgorde van de Helps
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Helps. Druk op 'Maak een nieuwe Help' om de eerste aan te maken.
+      help:
+        view_live: Bekijk deze help op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze help
+        delete: Verwijder deze help voor eeuwig
+  helps:
+    show:
+      other: Andere Helps
