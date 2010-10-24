@@ -1,3 +1,8 @@
+PATH
+  remote: vendor/engines
+  specs:
+    refinerycms-helps (1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -117,6 +122,7 @@ DEPENDENCIES
   rails (= 3.0.1)
   refinerycms (~> 0.9.8.5)
   refinerycms-blog (= 1.0.rc9)
+  refinerycms-helps (= 1.0)!
   refinerycms-i18n (~> 0.9.8.7)
   refinerycms-inquiries (~> 0.9.8.8)
   refinerycms-news (~> 0.9.9)

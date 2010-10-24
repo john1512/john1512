@@ -61,3 +61,5 @@ gem "refinerycms-news", '~> 0.9.9'
 gem 'refinerycms-blog', '= 1.0.rc9'
 
 # END USER DEFINED
+
+gem 'refinerycms-helps', '1.0', :path => 'vendor/engines', :require => 'helps'
