@@ -16,7 +16,7 @@ module ApplicationHelper
   #for _content_page.html.erb
   #
   def flicker_tag_processing( html )
-    html.gsub(
+    html.to_s.gsub(
       /<([A-Z][A-Z0-9]*)\b[^>]*>\s*{{FLI?C?KE?R:\s*([a-z0-9]+(@[a-z0-9]+)?)\s*}}\s*<\/\1>/i,
       "<ul class='jflickrfeed' data-tag='\\2'></ul>"
     )
