@@ -2,7 +2,7 @@
   <p>
     <%= simple_format(comment.message.to_s) %>
   </p>
+  <p class='blog_comment_author'>
+    <em><%= "Created by #{comment.name} at #{comment.created_at.strftime("%b %d %Y, %H:%M")}" %></em>
+  </p>
 </div>
-<p class='blog_comment_author'>
-  <em><%= "Created by #{comment.name} at #{comment.created_at.strftime("%b %d %Y, %H:%M")}" %></em>
-</p>
