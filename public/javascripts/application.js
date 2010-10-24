@@ -1,8 +1,13 @@
 $(document).ready(function(){
+  var list = $("ul.jflickrfeed");
+  var tag = list.attr("data-tag");
+  if (tag === undefined) {
+    tag = "";
+  }
   $('ul.jflickrfeed').jflickrfeed({
-	limit: 2,
+	limit: 20,
 	qstrings: {
-		id: '44802888@N04'
+          tags: "john1512," + tag
 	},
 	itemTemplate: '<li><img alt="{{title}}" src="{{image_s}}" /></li>'
   });
