@@ -53,7 +53,7 @@ table {
 
 /* CSS Document */
 
-body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; color: #000; line-height: 18px; background: url(../images/site_top_line.gif) top repeat-x; padding: 0; margin: 0;  }
+body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; color: #000; line-height: 18px; background: url(/images/site_top_line.gif) top repeat-x; padding: 0; margin: 0;  }
 
 p { font-size: 14px; line-height: 22px; color: #666; margin-top: 5px; }
 h1 { font-weight: bold; font-size: 27px; color: #a63a23; }
@@ -61,9 +61,9 @@ h2,h2 a,h2 a:visited { font-size: 17px; color: #4b606e; margin-bottom: 5px; marg
 #wrap { width: 960px; margin: 0 auto;  }
  
 /* HEADER */  
-#header { position: relative; margin-top: 6px; width: 960px; height: 221px; background: url(../images/header_bg.jpg) 0 -6px no-repeat; }
-#topDonate { position: absolute; display: block; height: 44px; width: 216px; background: url(../images/donate_button_top.jpg); float: right; text-indent: -2000px; top: -6px; right: 0; }
-#logo a { position: absolute; display: block; height: 165px; width: 161px; background: url(../images/logo.png) no-repeat; text-indent: -2000px; top: 23px; }
+#header { position: relative; margin-top: 6px; width: 960px; height: 221px; background: url(/images/header_bg.jpg) 0 -6px no-repeat; }
+#topDonate { position: absolute; display: block; height: 44px; width: 216px; background: url(/images/donate_button_top.jpg); float: right; text-indent: -2000px; top: -6px; right: 0; }
+#logo a { position: absolute; display: block; height: 165px; width: 161px; background: url(/images/logo.png) no-repeat; text-indent: -2000px; top: 23px; }
 
 /* HOME CONTENT */
 #homeBanner { margin: 0 0 20px 0; padding: 0; }
@@ -75,7 +75,8 @@ ul#blog_posts > li { list-style:none; margin: 0; }
 ul#blog_posts { margin: 0; padding: 0; }
 .blog_comment_message.even {background: #afc7db; }
 
-/* Main Navigation */ 
+/* Main Navigation */
+
 ul#navigation  { 
 	position: absolute; 
 	right: 0; 
@@ -92,34 +93,33 @@ ul#navigation li { display: inline; list-style: none; float: left; margin-left: 
 ul#navigation li a { display: block; text-transform: uppercase; color: #4b606e; text-decoration: none; font-weight: bold; font-size: 16px;}
 ul#navigation li.selected { border-bottom: solid 3px #ab4731; }
 
-ul#sub_navigation  { 
-	position: absolute; 
-	right: 50; 
-	top: 182px; 
-	margin: 0;
-                     margin-left: 200px;
+div#sub_nav_wrap { position: absolute; top: 190px; height: 50px; width: 574px; right: 0; }
+ul#sub_navigation  {
+	width: auto;
+	border: solid 1px #97b1c2;
+	background: url(/images/sub_nav_bg.jpg) repeat-x;
 	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;  
+	height: 46px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	float: left;
 }
-ul#sub_navigation li { display: inline; list-style: none; float: left; margin-left: 20px; padding-bottom: 5px; }
-ul#sub_navigation li a { display: block; text-transform: uppercase; color: #4b606e; text-decoration: none; font-weight: bold; font-size: 16px;}
-ul#sub_navigation li.selected { border-bottom: solid 3px #ab4731; }
+ul#sub_navigation li { width: auto; list-style: none; float: left; margin: 14px 20px 0 18px; padding: 0 0 3px 0; }
+ul#sub_navigation li a { display: block; text-transform: titlecase; color: #4b606e; text-decoration: none; font-weight: normal; font-size: 16px;}
+ul#sub_navigation li.selected { border-bottom: solid 2px #ab4731; }
 
 /* Hi Andy! */
 
 /* News Box */
-#newsBox { position: relative; height: 325px; width: 525px; background: url(../images/callout_corner.png) no-repeat; padding: 20px; }
+#newsBox { position: relative; height: 325px; width: 525px; background: url(/images/callout_corner.png) no-repeat; padding: 20px; }
 #newsBox h1 { margin-bottom: 10px; }
 #newsWrapper { height: 255px; width: 525px; overflow: auto; }
 .moreNews { position: absolute; bottom: 10px; left: 20px; }
 .readMore { color: #b37a40; text-decoration: none; }
 
 /* Difference Box */
-#differenceBox { position: relative; height: 300px; width: 394px; background: url(../images/difference_bg.jpg); }
+#differenceBox { position: relative; height: 300px; width: 394px; background: url(/images/difference_bg.jpg); }
 #differenceBox a { position: absolute; bottom: 20px; right: 20px; }
 
 /* Floats */
@@ -136,15 +136,15 @@ h1.content { margin: 45px 0 25px;}
 img.content { margin: 5px 0 5px 5px; }
 
 /* FOOTER */
-#footerWrapper { background: url(../images/footer_bg.jpg) repeat-x; height:298px; margin-top: 20px;  }
+#footerWrapper { background: url(/images/footer_bg.jpg) repeat-x; height:298px; margin-top: 20px;  }
 #footer { position: relative; width: 960px; height:298px; margin: 0 auto; }
 #footerConnections { width: 285px; float: left; }
 #footerConnections h2 { font-size: 22px; font-weight: bold; color: #fff; text-transform: uppercase; border-bottom: #8ca8ba 1px solid; padding-bottom: 15px; margin: 30px 0 0 0 ;  }
 #footerConnections ul { padding-left: 0; padding-top: 0px; margin: 0; } 
-#footer ul li { list-style: none;  padding: 10px 0 ; border-bottom: #8ca8ba 1px solid;  } 
+#footer ul li { list-style: none;  padding: 10px 0 ; border-bottom: #8ca8ba 1px solid; } 
 #footer ul li a { color: #fff; text-decoration: none; }
  
-#footer_verse p { position: absolute; color: #728896; font-size: 25px; width: 500px; letter-spacing: 150%; line-height: 150%; background: url(../images/verse_quotes.png) top left no-repeat; padding-left: 70px; right: 0; top: 20px; }
+#footer_verse p { position: absolute; color: #728896; font-size: 25px; width: 500px; letter-spacing: 150%; line-height: 150%; background: url(/images/verse_quotes.png) top left no-repeat; padding-left: 70px; right: 0; top: 20px; }
  
 #copyright { position: absolute; clear: both; color: #353f46; text-transform: uppercase; font-size: 12px; bottom: 13px; }
  
