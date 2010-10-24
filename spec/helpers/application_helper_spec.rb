@@ -48,4 +48,31 @@ describe ApplicationHelper do
       helper.obtain_sub_pages(@pages.first, []).should == []
     end
   end
+
+  describe "flicker tag processing" do
+    before(:each) do
+      @samples = { 
+                   :monkey => "<span class=\"monkey\">{{flicker:george}}</span>", 
+                   :minimal => "<P>{{FLKR:g}}</P>",
+                   :verbose => "STUFF<BLah34>  {{FLICKER:  99@73f}}</Blah34>MORESTUFF"
+                 }
+    end
+
+    it "correctly parse the monkey html sample" do
+      flicker_tag_processing(@samples[:monkey]).should == "<ul class='jflickrfeed' data-tag='george'></ul>"
+    end
+
+    it "accepts a minimal html sample" do
+      flicker_tag_processing(@samples[:minimal]).should == "<ul class='jflickrfeed' data-tag='g'></ul>"
+    end
+
+    it "accepts a verbose html sample" do
+      flicker_tag_processing(@samples[:verbose]).should == "STUFF<ul class='jflickrfeed' data-tag='99@73f'></ul>MORESTUFF"
+    end
+
+    it "can cope if html is nil" do
+      flicker_tag_processing(nil).should == ""
+    end
+    
+  end
 end
