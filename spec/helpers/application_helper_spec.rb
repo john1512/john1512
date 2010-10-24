@@ -51,11 +51,18 @@ describe ApplicationHelper do
 
   describe "flicker tag processing" do
     before(:each) do
-      samples = { :monkey=> "<span class=\"monkey\">{{flicker:george}}</span>" }
+      @samples = { 
+                   :monkey => "<span class=\"monkey\">{{flicker:george}}</span>", 
+                   :minimal => "<P>{{FLKR:g}}</P>"
+                 }
     end
 
-    it "correctly parse the monkey sample" do
-      flicker_tag_processing(samples[:monkey]).should == "nice"
+    it "correctly parse the monkey html sample" do
+      flicker_tag_processing(@samples[:monkey]).should == "<ul class='jflickrfeed' data-tag='george'></ul>"
+    end
+
+    it "parses a minimal html sample" do
+      flicker_tag_processing(@samples[:minimal]).should == "<ul class='jflickrfeed' data-tag='g'></ul>"
     end
   end
 end
