@@ -1,7 +1,7 @@
 <% theme ||= false -%>
 <head>
   <title><%= browser_title(yield(:title)) %></title>
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.png" />
   <meta charset='<%= Refinery::Application.config.encoding %>' />
   <%= csrf_meta_tag %>
   <%= render(:partial => '/shared/html5_for_ie.js').html_safe if request.env['HTTP_USER_AGENT'] =~ /MSIE/ %>
