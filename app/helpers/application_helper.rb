@@ -8,10 +8,9 @@ module ApplicationHelper
 	#for shared/_menu.html.erb
 	#
 	def obtain_sub_pages(curr_page, all_pages)
-		return [] if curr_page.nil? or all_pages.nil?
+		return [] if curr_page.blank? or all_pages.blank?
     
-		pid = curr_page.parent_id.nil? ? curr_page.id : curr_page.parent_id
-		all_pages.reject {|p| p.parent_id != pid }
+		all_pages.reject {|p| p.parent_id != top_level_page_id(curr_page) }
 	end
 	
 	#
@@ -24,7 +23,8 @@ module ApplicationHelper
 		)
 	end
 	
-	
-	
-
+private
+  def top_level_page_id(page) 
+    page.parent_id.nil? ? page.id : page.parent_id
+  end
 end
